@@ -16,10 +16,7 @@ steps:
   # - name: 'alpine/helm'
   #   args: ['repo', 'add', 'helm-artifact-repo', 'oci://europe-west2-docker.pkg.dev/playpen-ff1b21/helm-artifact-repo']
   - name: 'alpine/helm'
-    entrypoint: bash
-    args: 
-      - |
-        echo "hello"
+    args: ["echo", "'hello'"]
 
   - name: 'alpine/helm'
     args: ['package', '.']
