@@ -9,6 +9,7 @@ steps:
       - |
         gcloud components install docker-credential-gcr -y
         gcloud auth configure-docker europe-west2-docker.pkg.dev
+        gcloud auth print-access-token > oauth-token
 
   # - name: 'alpine/helm'
   #   args: ['repo', 'add', 'helm-artifact-repo', 'oci://europe-west2-docker.pkg.dev/playpen-ff1b21/helm-artifact-repo']
@@ -16,7 +17,7 @@ steps:
     entrypoint: bash
     args: 
       - |
-        gcloud auth print-access-token | helm registry login -u oauth2accesstoken --password-stdin https://europe-west2-docker.pkg.dev
+        echo /workspace/oauth-token | helm registry login -u oauth2accesstoken --password-stdin https://europe-west2-docker.pkg.dev
 
   - name: 'alpine/helm'
     args: ['package', '.']
