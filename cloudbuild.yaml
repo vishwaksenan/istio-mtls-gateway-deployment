@@ -15,12 +15,11 @@ steps:
 
   # - name: 'alpine/helm'
   #   args: ['repo', 'add', 'helm-artifact-repo', 'oci://europe-west2-docker.pkg.dev/playpen-ff1b21/helm-artifact-repo']
-  - name: 'dtzar/helm-kubectl'
+  - name: 'alpine/helm'
     entrypoint: bash
     args: 
       - |
-        ls /workspace
-        cat /workspace/oauth-token
+        echo "hello"
 
   - name: 'alpine/helm'
     args: ['package', '.']
