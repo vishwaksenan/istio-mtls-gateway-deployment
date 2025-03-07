@@ -10,6 +10,7 @@ steps:
         gcloud components install docker-credential-gcr -y
         gcloud auth configure-docker europe-west2-docker.pkg.dev
         gcloud auth print-access-token > /builder/home/oauth-token
+        ls /builder/home/
         cat /builder/home/oauth-token
 
 
