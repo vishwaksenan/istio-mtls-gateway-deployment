@@ -17,7 +17,7 @@ steps:
     entrypoint: bash
     args: 
       - |
-        echo /workspace/oauth-token | helm registry login -u oauth2accesstoken --password-stdin https://europe-west2-docker.pkg.dev
+        echo /workspace/oauth-token | helm --help
 
   - name: 'alpine/helm'
     args: ['package', '.']
