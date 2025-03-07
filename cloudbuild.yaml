@@ -19,7 +19,7 @@ steps:
     entrypoint: bash
     args: 
       - |
-        cat ./workspace/oauth-token
+        cat /workspace/oauth-token
 
   - name: 'alpine/helm'
     args: ['package', '.']
