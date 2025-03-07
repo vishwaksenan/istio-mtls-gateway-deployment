@@ -15,4 +15,4 @@ steps:
     args: ['package', '.']
 
   - name: 'alpine/helm'
-    args: ['push', 'service-with-auth-0.1.0.tgz', 'oci://europe-west2-docker.pkg.dev/playpen-ff1b21/helm-artifact-repo:v1.0.0']
+    args: ['push', 'service-with-auth-0.1.0.tgz', 'oci://europe-west2-docker.pkg.dev/playpen-ff1b21/helm-artifact-repo']
