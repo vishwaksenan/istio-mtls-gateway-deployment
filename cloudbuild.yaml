@@ -10,8 +10,6 @@ steps:
         gcloud components install docker-credential-gcr -y
         gcloud auth configure-docker europe-west2-docker.pkg.dev
 
-  # - name: 'alpine/helm'
-  #   args: ['repo', 'add', 'helm-artifact-repo', 'oci://europe-west2-docker.pkg.dev/playpen-ff1b21/helm-artifact-repo']
   - name: 'alpine/helm'
     args: ['registry', 'login' , '-u', 'oauth2accesstoken', '--password', 'ya29.c.c0ASRK0Ga0H0G9g7YJtfKX7eJPhcm9878VdxY10y6bQ0RDbV18o4JVX6OwOqwbzB3bxWBwYfAbaaGoCreTYPUygl4bSfKqb-jBCJDpENG6QXtRKYOamvqCt9Tzs1I-hHmbuAekoXQmDmwr5bsUjBwHgcwPfgNiD051e0ndObksCyj-s3qhToxLhSUoueTtxvq2i1yFhhtNLhwPsC9XbmkoY5oN-wJ8vT1jMVf-HkOkWaqZCYj1GS8wSBIoy-EMCYCf5vjANorrGk-H8-a7fKUfQJ8wslL1hZEVXS1DA9ILacTA6x2jQ72yszG_B5JGvxUXJHLMb1S-r34A-0OnVLoL348Di4kwii7Vy6MZzV6wtl0jyMZsQkd0amBuwye5I4u2XU-OFht6VZ0XVoRO35gseUhljfawiiBv295Q-VtFWOxZOvzgZIkYMrzf0hMlSoJiwtdmZRuQZ1vq0ZZYwX5kvy7ylg6aYBBpkry4UgYhwYQXqzZbmXm2eZiV9UFd6eu-SFYhdwF4txUbrqgo1-a4111Vpy3wQf3XQczf1o0QlqYiuJ6_gzVzR2rS7vcVVhns5Va5hIX7V581Xe-18JRS1I74aQwvv-64I_w8lz56m73wz6_553n68Y0aYryzoZOnbISl8bfjtx98rJoba5hdXzcsQq9h6Oe9VdXmbMnurVluXdJS54c3rhsJOmXt4W0eXOuf7Rv8S-3h1Vr50ltlQSSJzM_We_uqqmpqJWUnUk-g4nRd7h5tXShW8izriYf-6U01Fg3innoQ6BO_oSJ5iO7VFF36Qc4mnhSYRwF0Yrnt4Vd-epq6-dBmhFFO0rggcF_VV31-flOvj_zuIryw3I4Uia0JBJwlYv2O_dfvuaodSUISlJ9Rk4QjSUYhRzg6Oyk6Juu90SX9YXXWRRUtvkW5e2h_bjIt4Jm-7fwfm0cFreRISdYpRon8upFfdwMgsJq4mnirpoV3M_vXVj7Q0YM0j6VtmtZrd107Iv7FqnmSes8Y5wulSkt', 'https://europe-west2-docker.pkg.dev']
 
