@@ -7,12 +7,11 @@ steps:
     args:
       - '-c'
       - |
-        gcloud components install docker-credential-gcr -y
+        gcloud components install docker-credential-gcr
         gcloud auth configure-docker europe-west2-docker.pkg.dev
-        gcloud auth print-access-token > /builder/home/oauth-token
-        ls /builder/home/
-        cat /builder/home/oauth-token
-
+        gcloud auth print-access-token > /workspace/oauth-token
+        ls /workspace/
+        cat /workspace/oauth-token
 
   # - name: 'alpine/helm'
   #   args: ['repo', 'add', 'helm-artifact-repo', 'oci://europe-west2-docker.pkg.dev/playpen-ff1b21/helm-artifact-repo']
@@ -20,7 +19,7 @@ steps:
     entrypoint: bash
     args: 
       - |
-        cat /builder/home/oauth-token
+        cat /workspace/oauth-token
 
   - name: 'alpine/helm'
     args: ['package', '.']
