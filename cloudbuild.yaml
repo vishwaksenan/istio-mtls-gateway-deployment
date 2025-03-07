@@ -9,8 +9,6 @@ steps:
       - |
         gcloud components install docker-credential-gcr -y
         gcloud auth configure-docker europe-west2-docker.pkg.dev
-        export PATH=$PATH:~/.docker/config.json
-        docker-credentials-gcr
 
   # - name: 'alpine/helm'
   #   args: ['repo', 'add', 'helm-artifact-repo', 'oci://europe-west2-docker.pkg.dev/playpen-ff1b21/helm-artifact-repo']
