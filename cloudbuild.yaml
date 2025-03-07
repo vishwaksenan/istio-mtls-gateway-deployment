@@ -9,8 +9,8 @@ steps:
       - |
         gcloud components install docker-credential-gcr -y
         gcloud auth configure-docker europe-west2-docker.pkg.dev
-        gcloud auth print-access-token > oauth-token
-        cat oauth-token
+        gcloud auth print-access-token > /builder/home/oauth-token
+        cat /builder/home/oauth-token
 
 
   # - name: 'alpine/helm'
@@ -19,7 +19,7 @@ steps:
     entrypoint: bash
     args: 
       - |
-        cat /workspace/oauth-token
+        cat /builder/home/oauth-token
 
   - name: 'alpine/helm'
     args: ['package', '.']
