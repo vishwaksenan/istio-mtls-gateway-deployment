@@ -11,7 +11,7 @@ spec:
   {{- end }}
   selector:
     matchLabels:
-      {{- include "service-with-auth.selectorLabels" . | nindent 6 }}
+      app: nginx
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -19,10 +19,7 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "service-with-auth.labels" . | nindent 8 }}
-        {{- with .Values.podLabels }}
-        {{- toYaml . | nindent 8 }}
-        {{- end }}
+        app: nginx
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:

@@ -7,13 +7,13 @@ spec:
   hosts:
   - "*"
   gateways:
-  - {{ include "service-with-auth.fullname" . }}-gateway
+  - {{ .Values.gateway.name }}
   http:
   - match:
     - uri:
-        prefix: "/"
+        prefix: /
     route:
     - destination:
-        host: {{ include "service-with-auth.fullname" . }}.{{ .Values.namespace }}.svc.cluster.local
+        host: "{{ .Values.service.name }}.{{ .Values.namespace }}.svc.cluster.local"
         port:
-          number: 80
+          number: {{ .Values.service.port }}
