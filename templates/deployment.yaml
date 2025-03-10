@@ -20,6 +20,7 @@ spec:
         rollme: {{ randAlphaNum 5 | quote }}
       labels:
         app: nginx
+        deploymentRevisionId: "{{ .Release.Revision }}"
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
