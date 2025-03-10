@@ -12,6 +12,7 @@ labels:
 
 image:
   repository: nginx
+  tag: latest
   # This sets the pull policy for images.
   pullPolicy: IfNotPresent
 
@@ -56,7 +57,7 @@ service:
   # This sets the service type more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types
   type: ClusterIP
   # This sets the ports more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#field-spec-ports
-  port: 5000
+  port: 8000
   name: app-service
 
 # This block is for setting up the ingress for more information can be found here: https://kubernetes.io/docs/concepts/services-networking/ingress/
@@ -92,11 +93,11 @@ resources: {}
 livenessProbe:
   httpGet:
     path: /
-    port: http
+    port: 8000
 readinessProbe:
   httpGet:
     path: /
-    port: http
+    port: 8000
 
 # This section is for setting up autoscaling more information can be found here: https://kubernetes.io/docs/concepts/workloads/autoscaling/
 autoscaling:
