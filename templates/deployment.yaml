@@ -6,7 +6,7 @@ metadata:
     app: nginx
   annotations:
     rollme: {{ randAlphaNum 5 | quote }}
-  namespace: {{ .Values.namespace }}
+  namespace: "{{ .Values.namespace }}-{{ .Values.rid }}"
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}

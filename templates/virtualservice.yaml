@@ -1,13 +1,13 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
-  name: {{ .Values.virtualservice.name }}
+  name: "{{ .Values.virtualservice.name }}-{{ .Values.rid }}"
   namespace: {{ .Values.virtualservice.namespace }}
 spec:
   hosts:
   - "*"
   gateways:
-  - {{ .Values.gateway.name }}
+  - "{{ .Values.gateway.name }}-{{ .Values.rid }}"
   http:
   - match:
     - uri:
@@ -16,6 +16,6 @@ spec:
       uri: /
     route:
     - destination:
-        host: "{{ .Values.service.name }}.{{ .Values.namespace }}.svc.cluster.local"
+        host: "{{ .Values.service.name }}.{{ .Values.namespace }}-{{ .Values.rid }}.svc.cluster.local"
         port:
           number: {{ .Values.service.port }}

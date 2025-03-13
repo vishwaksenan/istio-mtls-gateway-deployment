@@ -1,7 +1,7 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
-  name: {{ .Values.gateway.name }}
+  name: "{{ .Values.gateway.name }}-{{ .Values.rid }}"
   namespace: {{ .Values.gateway.namespace }}
 spec:
   selector:
