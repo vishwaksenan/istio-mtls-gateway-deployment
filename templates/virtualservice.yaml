@@ -11,7 +11,9 @@ spec:
   http:
   - match:
     - uri:
-        prefix: /
+        prefix: "/{{ .Values.rid }}"
+    rewrite:
+      uri: /
     route:
     - destination:
         host: "{{ .Values.service.name }}.{{ .Values.namespace }}.svc.cluster.local"
