@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "service-with-auth.fullname" . }}
+  name: "{{ .Values.name }}-{{ .Values.rid }}"
   labels:
     app: nginx
   annotations:
