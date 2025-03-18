@@ -10,12 +10,12 @@ steps:
         gcloud components install docker-credential-gcr -y
         gcloud auth configure-docker europe-west2-docker.pkg.dev
 
-  - name: "europe-west2-docker.pkg.dev/playpen-ff1b21/helm-artifact-repo/playpen-base-image"
+  - name: "europe-west2-docker.pkg.dev/playpen-86bd2a/deployment-artifacts/playpen-base-image"
     script: |
       gcloud auth print-access-token | helm registry login -u oauth2accesstoken --password-stdin https://europe-west2-docker.pkg.dev
 
-  - name: 'europe-west2-docker.pkg.dev/playpen-ff1b21/helm-artifact-repo/playpen-base-image'
+  - name: 'europe-west2-docker.pkg.dev/playpen-86bd2a/deployment-artifacts/playpen-base-image'
     args: ["helm", 'package', '.']
 
-  - name: 'europe-west2-docker.pkg.dev/playpen-ff1b21/helm-artifact-repo/playpen-base-image'
-    args: ["helm", 'push', '/workspace/service-with-auth-0.1.0.tgz', 'oci://europe-west2-docker.pkg.dev/playpen-ff1b21/helm-artifact-repo']
+  - name: 'europe-west2-docker.pkg.dev/playpen-86bd2a/deployment-artifacts/playpen-base-image'
+    args: ["helm", 'push', '/workspace/transient-deployment-0.1.0.tgz', 'oci://europe-west2-docker.pkg.dev/deployment-artifacts/helm-artifact-repo']
