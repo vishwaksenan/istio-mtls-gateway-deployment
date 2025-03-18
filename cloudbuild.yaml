@@ -18,4 +18,4 @@ steps:
     args: ["helm", 'package', '.']
 
   - name: 'europe-west2-docker.pkg.dev/playpen-86bd2a/deployment-artifacts/playpen-base-image'
-    args: ["helm", 'push', '/workspace/transient-deployment-0.1.0.tgz', 'oci://europe-west2-docker.pkg.dev/deployment-artifacts/helm-artifact-repo']
+    args: ["helm", 'push', '/workspace/transient-deployment-0.1.0.tgz', 'oci://europe-west2-docker.pkg.dev/playpen-86bd2a/deployment-artifacts/helm-artifact-repo']
