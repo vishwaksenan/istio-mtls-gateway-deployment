@@ -8,8 +8,11 @@ spec:
     istio: ingress # use Istio default gateway implementation
   servers:
   - port:
-      number: 80
-      name: http
-      protocol: HTTP
+      number: 443
+      name: https
+      protocol: HTTPS
+    tls:
+      mode: MUTUAL
+      credentialName: {{ .Values.gateway.caCertificateSecret }}
     hosts:
     - "*"
