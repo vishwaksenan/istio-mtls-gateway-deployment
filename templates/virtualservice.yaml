@@ -5,9 +5,9 @@ metadata:
   namespace: {{ .Values.virtualservice.namespace }}
 spec:
   hosts:
-  - "*"
+  - {{ .Values.virtualservice.host }}
   gateways:
-  - "{{ .Values.gateway.name }}-{{ .Values.rid }}"
+  - {{ .Values.gateway.name }}
   http:
   - match:
     - uri:

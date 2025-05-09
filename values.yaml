@@ -72,12 +72,12 @@ affinity: {}
 
 
 gateway:
-  name: my-helmchart-gateway
+  name: project1-gateway
   namespace: istio-ingress
-  caCertificateSecret: project1-ca-secret
 
 virtualservice:
   name: my-helmchart-virtualservice
   namespace: istio-ingress
+  host: example1.com
 
 
